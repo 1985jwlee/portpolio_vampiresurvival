@@ -1,0 +1,25 @@
+{
+    "name": "Game.ECS",
+    "rootNamespace": "Game.ECS",
+    "references": [
+        "GUID:560b04d1a97f54a4e82edc0cbbb69285",
+        "GUID:f81cf770bf5ddeb4e8ff3d9386ee646e",
+        "GUID:def07783ecb3dc6428d9d1613c97b639",
+        "GUID:1b9de310ac4e04343af7c150ffae4a56",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:b83fa2c9a1c9b78468588c16e6fad878",
+        "GUID:0c3d971be5ab3c929b4ddcd28867102d",
+        "GUID:029c1c1b674aaae47a6841a0b89ad80e",
+        "GUID:d479e159142f2954fadc06171555ec74"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
