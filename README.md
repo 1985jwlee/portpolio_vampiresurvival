@@ -64,8 +64,89 @@ Script
 │ ├─ UI
 │ └─ ...
 
-markdown
-코드 복사
+## 📐 Entity-based Architecture
+
+---
+'''mermaid
+graph TB
+    subgraph "Unity Runtime"
+        GameLoop[Unity GameLoop<br/>Update/FixedUpdate]
+    end
+    
+    subgraph "Entity Layer - Game Logic"
+        BaseEntity[Entity<br/>Base Class]
+        
+        subgraph "Character Entities"
+            PlayerEntity[PlayerCharacterEntity]
+            EnemyBase[EnemyCharacterEntity]
+            SlimeKing[SlimeKingEnemy]
+            SuicideBomb[SuicideBombingEnemy]
+            Shielder[ShielderEnemy]
+        end
+        
+        subgraph "Event Entities"
+            EventTrigger[EventTriggerEntity]
+        end
+        
+        subgraph "Dummy Entities"
+            DummyEntity[DummyEntity<br/>Test Purpose]
+        end
+    end
+    
+    subgraph "View Layer - Presentation"
+        UIView[UI View]
+        UiInit[UiViewInitializer]
+        CharView[Character View]
+    end
+    
+    subgraph "System Layer"
+        InputSys[Input System]
+        CollisionSys[Collision System]
+        HealthSys[Health System]
+        StateSys[State Management]
+    end
+    
+    GameLoop --> BaseEntity
+    
+    BaseEntity --> PlayerEntity
+    BaseEntity --> EnemyBase
+    BaseEntity --> EventTrigger
+    BaseEntity --> DummyEntity
+    
+    EnemyBase --> SlimeKing
+    EnemyBase --> SuicideBomb
+    EnemyBase --> Shielder
+    
+    PlayerEntity -.->|State Change| UIView
+    PlayerEntity -.->|Position| CharView
+    
+    EnemyBase -.->|AI Behavior| CharView
+    
+    InputSys --> PlayerEntity
+    CollisionSys --> PlayerEntity
+    CollisionSys --> EnemyBase
+    
+    HealthSys --> PlayerEntity
+    HealthSys --> EnemyBase
+    
+    StateSys --> PlayerEntity
+    StateSys --> EnemyBase
+    
+    UiInit --> UIView
+    
+    style BaseEntity fill:#4a90e2
+    style PlayerEntity fill:#2ecc71
+    style EnemyBase fill:#e74c3c
+    style UIView fill:#f39c12
+'''
+---
+
+### 설계 원칙
+
+- **Entity 중심**: 모든 게임 오브젝트는 Entity 상속
+- **View/Logic 분리**: Entity는 로직만, View는 표현만
+- **시스템 분리**: Input, Collision, Health 독립 관리
+
 
 ### 🧠 핵심 설계 원칙
 
