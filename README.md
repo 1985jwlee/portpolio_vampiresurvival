@@ -67,7 +67,7 @@ Script
 ## 📐 Entity-based Architecture
 
 ---
-'''mermaid
+```mermaid
 graph TB
     subgraph "Unity Runtime"
         GameLoop[Unity GameLoop<br/>Update/FixedUpdate]
@@ -138,7 +138,7 @@ graph TB
     style PlayerEntity fill:#2ecc71
     style EnemyBase fill:#e74c3c
     style UIView fill:#f39c12
-'''
+```
 ---
 
 ### 설계 원칙
