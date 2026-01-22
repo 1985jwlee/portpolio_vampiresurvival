@@ -54,16 +54,6 @@ Unity 엔진 기반으로 **확장성과 유지보수성을 고려한 아키텍�
 
 본 프로젝트는 **기능 확장과 유지보수에 강한 구조**를 목표로 다음과 같은 레이어 구조로 설계되었습니다.
 
-Script
-├─ Entity → 게임 월드의 모든 객체 논리 계층
-│ ├─ Character → 플레이어, 몬스터 등 캐릭터 로직
-│ ├─ Dummy → 테스트용 엔티티
-│ ├─ EventTrigger → 이벤트 트리거 엔티티
-│ └─ ...
-├─ View → 화면 표현 및 UI
-│ ├─ UI
-│ └─ ...
-
 ## 📐 Entity-based Architecture
 
 ---
@@ -141,13 +131,6 @@ graph TB
 ```
 ---
 
-### 설계 원칙
-
-- **Entity 중심**: 모든 게임 오브젝트는 Entity 상속
-- **View/Logic 분리**: Entity는 로직만, View는 표현만
-- **시스템 분리**: Input, Collision, Health 독립 관리
-
-
 ### 🧠 핵심 설계 원칙
 
 - **Entity 중심 설계**
@@ -158,6 +141,7 @@ graph TB
   - `EnemyCharacterEntity` 파생 구조로 다양한 몬스터 구현
 - **역할 기반 코드 구조**
   - Character / Event / UI / System 별 명확한 책임 분리
+- **시스템 분리**: Input, Collision, Health 독립 관리
 
 ---
 
@@ -215,6 +199,6 @@ vampiresurvival_like.mp4
 
 ## 🧑‍💻 개발자
 
-**이재우**  
-Unity 게임 클라이언트 개발자 (10년+)  
+**이재우**
+Unity 게임 클라이언트 개발자 (10년+)
 AI · Backend · Network · Mobile 개발 경험
